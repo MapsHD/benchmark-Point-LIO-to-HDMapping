@@ -158,8 +158,8 @@ int main(int argc, char **argv)
             }
         }
        
-        if (m.getTopic() == "/Odometry") {
-            ROS_INFO("Received message on topic: /Odometry");
+        if (m.getTopic() == "/aft_mapped_to_init") {
+            ROS_INFO("Received message on topic: /aft_mapped_to_init");
 
             nav_msgs::Odometry::ConstPtr odom_msg = m.instantiate<nav_msgs::Odometry>();
 

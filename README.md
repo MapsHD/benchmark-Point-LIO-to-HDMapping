@@ -25,7 +25,7 @@ Prepare recorded bag with estimated odometry:
 
 In first terminal record bag:
 ```shell
-rosbag record /cloud_registered /Odometry
+rosbag record /cloud_registered /aft_mapped_to_init
 ```
 
 and start odometry:
