@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>cpp_pubsub</name>
+  <name>point-lio-to-hdmapping</name>
   <version>0.0.0</version>
-  <description>bag-ct_icp-bag-session convert</description>
+  <description>bag-point_lio-bag-session convert</description>
 
   <maintainer email="matecki.m@outlook.com">Marcin Matecki</maintainer>
   <!-- One license tag required, multiple allowed, one license per tag -->

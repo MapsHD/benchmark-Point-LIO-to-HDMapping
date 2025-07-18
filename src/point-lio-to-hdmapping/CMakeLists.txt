@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(cpp_pubsub)
+project(point-lio-to-hdmapping)
 
 find_package(catkin QUIET COMPONENTS
   roscpp
@@ -48,7 +48,7 @@ include_directories(
   common
 )
 
-add_executable(listener src/Point_Lio_subscriber.cpp)
+add_executable(listener src/point-lio-subscriber.cpp src/laz_writer.cpp)
 
 
 
