@@ -41,6 +41,13 @@ WORKDIR /ros_ws
 
 COPY ./src ./src
 
+# Oxford Spires (Hesai Pandar) support: Point-LIO's preprocess.cpp already has a
+# HESAIxt32 handler upstream, but no shipped config/launch use it. Add both as
+# new files inside the built image only — the src/Point-LIO submodule checkout
+# on disk is left untouched.
+COPY config/hesai.yaml src/Point-LIO/config/hesai.yaml
+COPY launch/mapping_hesai.launch src/Point-LIO/launch/mapping_hesai.launch
+
 RUN source /opt/ros/noetic/setup.bash && \
     catkin_make
     
