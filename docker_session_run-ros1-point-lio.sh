@@ -58,6 +58,7 @@ echo "Output dir: $BAG_OUTPUT_HOST"
 xhost +local:docker >/dev/null
 
 docker run -it --rm \
+  -e DISABLE_ROS1_EOL_WARNINGS=1 \
   --network host \
   -e DISPLAY=$DISPLAY \
   -e ROS_HOME=/tmp/.ros \
@@ -74,7 +75,7 @@ docker run -it --rm \
     tmux send-keys -t '"$TMUX_SESSION"' '\''sleep 5
 source /opt/ros/noetic/setup.bash
 source /ros_ws/devel/setup.bash
-roslaunch point_lio mapping_avia.launch use_sim_time:=true
+roslaunch point-lio-to-hdmapping point_lio_canonical.launch use_sim_time:=true
 '\'' C-m
 
     # ---------- PANEL 2: rosbag record ----------
@@ -117,6 +118,7 @@ pkill -f ros || true
   '
 
 docker run -it --rm \
+  -e DISABLE_ROS1_EOL_WARNINGS=1 \
   --network host \
   -e DISPLAY="$DISPLAY" \
   -e ROS_HOME=/tmp/.ros \
